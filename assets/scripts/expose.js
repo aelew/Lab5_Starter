@@ -16,7 +16,10 @@ function init() {
 
   hornSelectEl.addEventListener('change', (e) => {
     const horn = e.target.value;
+
     hornImageEl.src = `assets/images/${horn}.svg`;
+    hornImageEl.alt = e.target.options[e.target.selectedIndex].text; // option name
+
     hornAudioEl.src = `assets/audio/${horn}.mp3`;
   });
 
@@ -36,6 +39,7 @@ function init() {
     }
 
     volumeIconEl.src = `assets/icons/volume-level-${level}.svg`;
+    volumeIconEl.alt = `Volume level ${level}`;
   });
 
   playButtonEl.addEventListener('click', () => {
